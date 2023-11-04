@@ -1,0 +1,362 @@
+/* Definición de variables de colores y tamaños */
+:root {
+    --bpo-white: #FFFFFF;
+    /* Color blanco */
+    --bpo-black: #000000;
+    /* Color negro */
+    --bpo-gray: #8a8a8a;
+    /* Color Azul */
+    --bpo-blue: blue;
+    /* Color gris */
+    --bpo-green: #06af1d;
+    /* Color verde */
+    --bpo-red: #f30808;
+    /* Color rojo */
+    --bpo-input-field: #efd0b1;
+    /* Color de campo de entrada */
+    --bpo-input-pass: #fc6f1e;
+    /* Color de campo de contraseña */
+    --bpo-hospital-green: #ACD9B2;
+    /* Color boton Primario y Secundario */
+    --bpo-btns-prim: #ACD9B2;
+    --bpo-btns-sec: #C7C7C7;
+    /* Color verde hospital */
+    --bpo-box-sadows: #5b5bef;
+    /* Color de sombras de caja */
+    --sm: 1.0rem;
+    /* Tamaño de fuente pequeño */
+    --md: 1.5rem;
+    /* Tamaño de fuente medio */
+    --md-x: 2.5rem;
+    /* Tamaño de fuente medio grande */
+    --lg: 3.6rem;
+    /* Tamaño de fuente grande */
+    --lg-x: 4rem;
+    /* Tamaño de fuente extra grande */
+
+    /* Tamaño minimo de medida para calculos de redimensionamiento */
+    --bpo-mue: 0.25em;
+    --border-radius-button-std: 1rem;
+    /* Radio de borde para botones */
+
+    --tit-company-leg-name: "BPO CHANGE";
+    /* Nombre de la empresa */
+    --app-bpo-background-color-fondo: rgba(193, 240, 197, 0.993);
+    /* Color de fondo de la aplicación */
+}
+
+/* Configuración general de fuente para todo el documento */
+* {
+    font-family: 'Quicksand', sans-serif;
+    /* Fuente Quicksand */
+}
+
+/* Configuración de la fuente base para el documento HTML */
+html {
+    font-size: 62.5%;
+    /* Ajuste del tamaño de fuente base */
+    background-color: var(--app-bpo-background-color-fondo);
+    /* Color de fondo de la aplicación */
+}
+
+/* Estilos para el contenedor de dispositivos móviles */
+.cntd-moviles {
+    display: flex;
+    /* Mostrar como flexbox */
+    flex-direction: column;
+    /* Dirección de columna */
+    flex-wrap: wrap;
+    /* Ajuste de ajuste de flex */
+    position: fixed;
+    /* Posición fija */
+    background-color: var(--app-bpo-background-color-fondo);
+    /* Color de fondo de la aplicación */
+    border-radius: 10px;
+    /* Radio de borde */
+    box-shadow: 0px 0px 0.5rem 0.5rem #5b5bef;
+    /* Sombra de caja */
+    height: auto;
+    /* Altura automática */
+    max-width: 400px;
+    /* Ancho máximo */
+    margin-top: 2rem;
+    /* Margen superior */
+    padding: 20px;
+    /* Relleno */
+    justify-content: center;
+    /* Alinear contenido al centro */
+    align-items: center;
+    /* Alinear elementos al centro */
+    left: 50%;
+    /* Posición izquierda al 50% */
+    transform: translateX(-50%);
+    /* Centrado horizontal */
+    gap: calc(var(--bpo-mue) * 4);
+}
+
+/* Estilos para los elementos de inicio de sesión y autenticación */
+.log-auth-itms {
+    display: flex;
+    /* Mostrar como flexbox */
+    flex-direction: column;
+    /* Dirección de columna */
+}
+
+/* Estilos para el nombre de la empresa */
+.company-name {
+    color: var(--bpo-black);
+    /* Color del texto */
+    font-size: var(--lg-x);
+    /* Tamaño de fuente grande extra */
+    font-weight: 900;
+    /* Grosor de la fuente */
+}
+
+/* Estilos para el título principal */
+.titulo-ppal {
+    color: var(--bpo-black);
+    /* Color del texto */
+    font-size: var(--md-x);
+    /* Tamaño de fuente medio grande */
+}
+
+/* Estilos para el título secundario */
+.titulo-sec {
+    color: var(--bpo-gray);
+    /* Color del texto */
+    font-size: var(--md);
+    /* Tamaño de fuente medio */
+}
+
+/* Estilos para el subtítulo */
+.sub-title {
+    color: var(--bpo-black);
+    /* Color del texto */
+    font-size: var(--md);
+    /* Tamaño de fuente medio */
+}
+
+.log-auth-itms {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--bpo-mue) * 4);
+}
+
+/* Estilos para el subtítulo de alerta */
+.log-auth-itms-req {
+    color: var(--bpo-red);
+    /* Color del texto */
+    font-size: var(--sm);
+    /* Tamaño de fuente pequeño */
+    padding-left: calc(var(--bpo-mue) * 25);
+    padding-right: calc(var(--bpo-mue) * 4);
+}
+
+.log-auth-email,
+.log-auth-pass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-title-alert {
+    /* position: fixed; */
+    color: var(--bpo-red);
+    /* Color del texto */
+    font-size: var(--sm);
+    /* Tamaño de fuente pequeño */
+    font-weight: 900;
+    /* padding-bottom: 8em; */
+}
+
+/* Estilos para las cajas de opciones del password */
+.log-auth-chkbox-opc-pass {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--bpo-mue) * 1);
+}
+
+.log-auth-chkbox-opc-pass-col {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--bpo-mue) * 1);
+}
+
+.log-auth-opc-pass-chk {}
+
+.log-auth-opc-pass-lbl {
+    color: var(--bpo-blue);
+    font-weight: 400;
+}
+
+/* Iconos de acceso */
+.log-auth-opc-pass-chk:hover,
+.log-auth-opc-pass-google:hover,
+.log-auth-opc-pass-lbl:hover {
+    cursor: pointer;
+}
+
+
+/* Estilos para los botones de acción */
+.btns-acc {
+    flex-direction: row;
+    /* Dirección de fila */
+    gap: calc(var(--bpo-mue) * 8);
+}
+
+/* Estilos para los botones de acción primarios */
+.log-auth-btns-acc-prim {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bpo-btns-prim);
+    border-radius: var(--border-radius-button-std);
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: calc(var(--bpo-mue)*8);
+}
+
+/* Estilos para los botones de acción primarios */
+.log-auth-btns-acc-prim-ok {
+    background-color: var(--bpo-green);
+    /* border: 2px solid var(--bpo-black); */
+    border-radius: var(--border-radius-button-std);
+    border: none;
+    color: var(--bpo-blue);
+}
+
+.log-auth-btns-acc-sec-cancel,
+.log-auth-btns-acc-sec-reset {
+    background-color: var(--app-bpo-background-color-fondo);
+    /* border: 2px solid var(--bpo-black); */
+    border-radius: var(--border-radius-button-std);
+    border: none;
+    color: var(--bpo-blue);
+}
+
+.log-auth-btns-acc-prim-ok:hover {
+    background-color: var(--bpo-btns-prim);
+    border: 1px solid var(--bpo-white);
+    border-radius: var(--border-radius-button-std);
+    color: var(--bpo-white);
+}
+
+.log-auth-btns-acc-sec-cancel:hover,
+.log-auth-btns-acc-sec-reset:hover {
+    background-color: var(--bpo-btns-sec);
+    border: 1px solid var(--bpo-white);
+    border-radius: var(--border-radius-button-std);
+    color: var(--bpo-white);
+}
+
+/* Estilos para los botones de acción secundarios */
+.log-auth-btns-acc-sec {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bpo-btns-sec);
+    border-radius: var(--border-radius-button-std);
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: calc(var(--bpo-mue)*8);
+}
+
+.log-auth-email-input {
+    width: 90%;
+}
+
+.log-auth-btn-eye {
+    border: 1px solid var(--bpo-black);
+    border-radius: calc(var(--border-radius-button-std)*4);
+    padding: calc(var(--bpo-mue)*2);
+}
+
+.log-auth-btn-eye:hover {
+    background-color: white;
+    color: #C7C7C7;
+    cursor: pointer;
+}
+
+.log-auth-btn-eye:active {
+    background-color: white;
+    color: #C7C7C7;
+    cursor: pointer;
+}
+
+.log-auth-pass-input {
+    width: 91%;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: var(--md);
+    border: 1px solid var(--bpo-black);
+    border-radius: var(--border-radius-button-std);
+    background-color: var(--bpo-input-field);
+    width: 100%;
+}
+
+.input[type="text"] {
+    /* background-color: var(--bpo-input-field); */
+    border-color: blue;
+}
+
+input[type="password"] {}
+
+input[type="password"]:active {
+    border-color: blue;
+}
+
+/* Clases especiales de ocultamiento */
+.st-none {
+    display: none;
+}
+
+.st-hidden {
+    visibility: hidden;
+}
+
+.st-view {}
+
+#flgEmail,
+#flgPasswd {
+    height: 26px;
+}
+
+/* Apariencia de modal */
+.modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    font-size: var(--md-x);
+    font-weight: 500;
+    text-align: center;
+    color: blue;
+}
+
+.modal-body>P {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    font-size: var(--md);
+    font-weight: 500;
+    text-align: center;
+    color: blue;
+}

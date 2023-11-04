@@ -1,0 +1,55 @@
+<!-- ----------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Firebase modulos  -->
+    <!-- <script type="module" src="../lib/firebase-config.js"></script>
+    <script type="module" src="../lib/firebase-admin-config.js"></script> // -->
+
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAIQSb8WzERpk4XQWuI3huEB_z7FCONKBs",
+            authDomain: "bpo-change-web.firebaseapp.com",
+            projectId: "bpo-change-web",
+            storageBucket: "bpo-change-web.appspot.com",
+            messagingSenderId: "532125362246",
+            appId: "1:532125362246:web:1946532793f1a4aa6ec247",
+            measurementId: "G-8SZP5W0JKT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+    </script>
+
+    <script>
+        // Use createUserWithEmailAndPassword function
+        auth.createUserWithEmailAndPassword('teto@gmail.com', 'Zxasqw12.') // email, password
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // Additional actions after successful user creation
+                alert('Usuario creado con éxito: ' + user.email);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // Handle errors here
+                alert('Error al crear usuario: ' + errorMessage);
+            });
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

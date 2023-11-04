@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Fernando Martin Gan">
+    <meta name="description" content="Plantilla Navegador All de Fernando Martin Gan - Sarmiento - Chubut">
+    <meta name="keywords" content="Html, CSS, javascript, Bootstrap, Firebase, React, Rest, Go">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <link rel="stylesheet" href="../css/generals.css" type="text/css">
+    <link rel="stylesheet" href="../css/auth.css" type="text/css">
+    <link rel="stylesheet" href="../css/resp-movile.css" media="screen and (min-width: 400px)">
+    <link rel="stylesheet" href="../css/resp-tablet.css" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="../css/resp-desktop.css" media="screen and (min-width: 800px)">
+
+    <title>Bpo Change - Plantilla ( Tst-Firebase )</title>
+    <!-- cdns de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- cdns de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Firebase scripts ( cdns ) -->
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-app.js"></script> -->
+    <!-- 
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js"></script> 
+-->
+
+    <script src="../js/firebase-cfg.js"></script>
+</head>
+
+<body>
+    <div class="cntd-moviles">
+        <div class="log-auth-itms company-name">Bpo Change</div>
+        <div class="log-auth-itms"><img src="../assets/logos/logoCliente.png" alt="logo" class="logo" height="75"
+                width="75"></div>
+        <div class="log-auth-itms titulo-ppal">Loguin de Usuario</div>
+        <div class="log-auth-itms titulo-sec">Bienvenida/do a Nuestra Comunidad</div>
+        <div class="log-auth-itms sub-title">Correo Electronico</div>
+        <div class="log-auth-itms log-auth-email-input">
+            <input type="email" class="input text-center" id="logEmail" placeholder="Ingresa un emial valido"
+                name="email">
+            <img class="flg-email" id="flgEmail" src="../assets/iconos/three-dots-blue.svg" alt="Tres puntos">
+        </div>
+        <div class="log-auth-itms log-auth-pass">
+            <div class="log-auth-itms-req sub-title-alert">
+                Se recomienda una contraseña de (6 a 12 digitos, 1 Mayuscula, 1 Numero y almenos 1 Caracter)
+            </div>
+            <div class="log-auth-itms log-auth-pass-input">
+                <input type="password" id="inPassW" placeholder="" class="input input-password" maxlength="12">
+                <div class="log-auth-btn-eye">
+                    <img class="flg-passwd" id="eyePasswd" src="../assets/iconos/eye-slash-green.svg"
+                        alt="Eye / Eye Slash" onclick="fncEyeTooglePw('inPassW', 'eyePasswd')">
+                </div>
+                <img class="flg-passwd" id="flgPasswd" src="../assets/iconos/three-dots-blue.svg" alt="Tres puntos">
+            </div>
+        </div>
+        <br>
+        <div class="log-auth-itms log-auth-opc-pass">
+            <div class="log-auth-chkbox-opc-pass"></div>
+            <div class="log-auth-chkbox-opc-pass-col">
+                <!-- <input type="checkbox" class="log-auth-opc-pass-chk" id="chkRememPassword">
+                <label for="chkRememPassword" class="log-auth-opc-pass-lbl">Recordar Contraseña</label> -->
+
+                <!-- Descomentar esto cuanto el loguin de google este terminado -->
+<!-- 
+                <img class="log-auth-opc-pass-google" id="idLogoGooAuth" src="../assets/iconos/google-logo.svg"
+                    title="Acceder Mediante Tu Cuenta de Google" height="46px" alt="G para loguin de Google"
+                    onclick="fncBtnCheck('btnLogByGogle')">
+ -->
+            </div>
+            <div class="log-auth-chkbox-opc-pass"></div>
+            <div class="log-auth-chkbox-opc-pass-col">
+                <!-- <input type="checkbox" class="log-auth-opc-pass-chk" id="chkLogPassRecup"> -->
+                <!-- onclick="location.href='./log-in-rec.html'" -->
+                <!-- <label for="chkRegister" class="log-auth-opc-pass-lbl">Olvide mi contraseña</label> -->
+                <img class="log-auth-opc-pass-google" id="idLogoRecPassw" src="../assets/iconos/logo-recup-passw.svg"
+                    title="Recordar la Contraseña Olvidada" height="48px" alt="Recuperar Contraseña"
+                    onclick="fncBtnCheck('btnRememberPass')">
+            </div>
+            <div class="log-auth-chkbox-opc-pass"></div>
+            <div class="log-auth-chkbox-opc-pass-col">
+                <!-- <input type="checkbox" class="log-auth-opc-pass-chk" id="chkRegister">
+                <label for="chkRegister" class="log-auth-opc-pass-lbl">Registrarse</label> -->
+                <img class="log-auth-opc-pass-google" id="idLogoSignUp" src="../assets/iconos/logo-sign-up.svg"
+                    title="Registrarse y Crear Cuenta" height="46px" alt="Crear cuenta"
+                    onclick="fncBtnCheck('btnSignUp')">
+            </div>
+            <div class="log-auth-chkbox-opc-pass"></div>
+        </div>
+        <br>
+        <div class="log-auth-itms btns-acc">
+            <div class="log-auth-btns-acc-prim">
+                <input type="button" value="ACEPTAR" class="log-auth-btns-acc-prim-ok" id="btnFormOk"
+                    onclick="fncBtnCheck('Ok')">
+            </div>
+            <div class="log-auth-btns-acc-sec">
+                <input type="button" value="CANCELAR" class="log-auth-btns-acc-sec-cancel" id="btnFormCancel"
+                    onclick="window.location.href = 'http://www.bpochange.com.ar/portafolio/portafolio.html'">
+                <!-- onclick="fncBtnCheck('Cancel')"> -->
+            </div>
+            <div class="log-auth-btns-acc-sec">
+                <input type="reset" value="LIMPIAR" class="log-auth-btns-acc-sec-reset" id="btnFormReset"
+                    onclick="fncBtnCheck('Reset')">
+            </div>
+        </div>
+        <div class="log-auth-itms"></div>
+        <div class="log-auth-itms"></div>
+    </div>
+
+    <!-- Formulario modal para confirmacion de alta -->
+    <div class="modal" tabindex="-1" id="confirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMsg">¿Está seguro de que desea darse de alta en la aplicación?</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="foot-btns-ok st-none" id="id-foot-btns-ok">
+                        <button type="button" class="btn btn-primary " id="btnModalOk"
+                            data-bs-dismiss="modal">Ok</button>
+                    </div>
+                    <div class="foot-btns-Cancel st-none" id="id-foot-btns-cancel">
+                        <button type="button" class="btn btn-secondary" id="btnModalCancel" data-bs-dismiss="modal"
+                            onclick="window.location.href = '//www.bpochange.com.ar/portafolio/portafolio.html'">
+                            Cancelar</button>
+                    </div>
+                    <div class="foot-btns-Donate" id="id-foot-btns-cancel">
+                        <button type="button" class="btn btn-info" id="btnModalDonate" data-bs-dismiss="modal"
+                            onclick="window.location.href = 'http://www.bpochange.com.ar/donate/modaling-donate.html'">
+                            Haz una Donacion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Definicion de constantes / variables y funciones -->
+    <script>
+        // Declaracion de Variables
+        let vFlgChkEmail = false;
+        let vFlgChkPassW = false;
+        var vFlgRsltModal = false;
+        // Togle password en primer input box
+        function fncEyeTooglePw(inputId, eyeOpenId) {
+            var passwordInput = document.getElementById(inputId);
+            var eyeOpenIcon = document.getElementById(eyeOpenId);
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeOpenIcon.setAttribute("src", "../assets/iconos/eye-red.svg");
+            } else {
+                passwordInput.type = 'password';
+                eyeOpenIcon.setAttribute("src", "../assets/iconos/eye-slash-green.svg");
+            }
+        }
+        // Validacion de email
+        var vLogEmail = document.getElementById('logEmail');
+        var vFlagEmail = document.getElementById('flgEmail');
+        vLogEmail.addEventListener('input', function () {
+            const vEmail = vLogEmail.value;
+            // Realizar la validación de la contraseña aquí
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (regex.test(vEmail)) {
+                vFlagEmail.setAttribute("src", "../assets/iconos/check2-green.svg");
+                vFlagEmail.style.color = "green";
+                vFlagEmail.style.fontSize = "26px";
+                vFlgChkEmail = true;
+            } else {
+                vFlagEmail.setAttribute("src", "../assets/iconos/exclamation-octagon-red.svg");
+                vFlagEmail.style.color = "red";
+                vFlagEmail.style.fontSize = "26px";
+                vFlgChkEmail = false;
+            }
+            // console.log(`Función Eye Toggle con valor de password >: ${vEmail} .`);
+        });
+
+        // Validación de contraseña
+        var vLogPassW = document.getElementById('inPassW');
+        var vFlagPassW = document.getElementById('flgPasswd');
+        vLogPassW.addEventListener('input', function () {
+            const password = vLogPassW.value;
+            // Realizar la validación de la contraseña aquí
+            const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])(?!.*\s).{6,12}$/;
+            if (regex.test(password)) {
+                vFlagPassW.setAttribute("src", "../assets/iconos/check2-green.svg");
+                vFlagPassW.style.color = "green";
+                vFlagPassW.style.fontSize = "26px";
+                vFlgChkPassW = true;
+            } else {
+                vFlagPassW.setAttribute("src", "../assets/iconos/exclamation-octagon-red.svg");
+                vFlagPassW.style.color = "red";
+                vFlagPassW.style.fontSize = "26px";
+                vFlgChkPassW = false;
+            }
+            // console.log(`Función Eye Toggle con valor de password >: ${password} .`);
+        });
+        function fncAsigRsltModal(pRsltModal) {
+            vFlgRsltModal = pRsltModal;
+            return
+        }
+        function fncBtnCheck(pOpc) {
+            let vLogEmail = document.getElementById('logEmail');
+            let vLogPassW = document.getElementById('inPassW');
+            // Verificacion y accion de aceptar
+            // alert(`Entrando a buton check con opcion de ${pOpc}.`);
+            switch (pOpc) {
+                case 'Ok':
+                    if (vFlgChkEmail === true && vFlgChkPassW === true) {
+                        // Procesa el loguin
+                        fncFirebaseAuthCheck('Sign-in-EmailPassword', vLogEmail, vLogPassW);
+                        return
+
+                    } else {
+                        // Informa que los valores no son validos
+                        fncOpenModal(`Seguridad - Validacion de datos`, `Los datos ingresados no cumplen con los requisitos de seguridad, \n verifica y vuelve a intentarlo. \n Muchas Gracias.`, 'Ok');
+                    }
+                    break;
+                case 'Cancel':
+                    fncAbrirPaginaEnBlanco()
+                    break;
+                case 'Reset':
+                    location.reload();
+                    break;
+                case 'btnLogByGogle':
+                    fncFirebaseAuthCheck('Sign-in-Google', vLogEmail, vLogPassW)
+                    break;
+                // 'Sign-in-Google'
+                case 'btnRememberPass':
+                    // Abre el modal de confirmación olvido de contraseña
+                    fncOpenModal(`Solicitud de recordatorio de contraseña.`, `Usted ha informado, que ha olvidado la contraseña, \n si su email se encuentra en la base de datos, \n recibira un emial con los pasos a seguir. \n  Muchas gracias.`, 'OkCancel');
+                    fncFirebaseAuthCheck('Sign-Remember', vLogEmail)
+                    break;
+                // 'Sign-Remember'
+                case 'btnSignUp':
+                    if (vFlgChkEmail === true && vFlgChkPassW === true) {
+                        // Procesa el loguin
+                        fncFirebaseAuthCheck('Sign-up-EmailPassword', vLogEmail, vLogPassW)
+                    } else {
+                        // Abre el modal de confirmación para new alta
+                        fncOpenModal(`Solicitud de creacion de una nueva cuenta.`, `Usted ha solicitado registrarse como nuevo usuario, \n No ha completado su correo y contraseña, \n  complete y vuelva a intentarlo. \n  Muchas gracias.`, 'Ok');
+                        break;
+                    }
+            }
+            const vBtnFormOk = document.getElementById('btnFormOk');
+
+
+        }
+        // Funcion para abrir una pagina en blanco pasado por parametro, parametro en blanco / pagina en blanco
+        function fncAbrirPaginaEnBlanco(url) {
+            window.open(url, "_self");
+        }
+        // Funcion de loguin por firebase
+        function fncFirebaseAuthCheck(pAccion, pEmail, pPass) {
+            switch (pAccion) {
+                case 'Sign-in-EmailPassword': // Loguin con emial y contraseña
+                    auth.signInWithEmailAndPassword(pEmail.value, pPass.value) // email, password
+                        .then((userCredential) => {
+                            // Signed in 
+                            const user = userCredential.user;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            console.log(user);
+                            fncOpenModal(`Loguin de usuario`, `Felicidades te has logueado en nuestra comunidad, \n En un momento seras redirigido a la pagina de la aplicacion \n Continua disfrutando de nuestros servicios. \n Muchas Gracias.`, 'Ok');
+                        })
+                        .catch((error) => {
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            fncOpenModal(`Seguridad - Validacion de datos`, `Lamentablemente ha habido un error, \n Seguramente tu usuario o contraseña no son correctos, \n Prueba nuevamente o recupera la contraseña. \n Datos del error producido \n \n ${errorMessage} \n \n Muchas Gracias.`, 'Ok');
+                        });
+                    break;
+                case 'Sign-up-EmailPassword': // Loguin con emial y contraseña
+                    // Loguin con email y contraseña
+                    auth.createUserWithEmailAndPassword(pEmail.value, pPass.value) // email, password
+                        .then((userCredential) => {
+                            // Signed in 
+                            const user = userCredential.user;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            console.log(user);
+                            fncOpenModal(`Registro de datos`, `Felicidades te has registrado en nuestra comunidad, \n Revisa tu correo para completar el proceso \n Continua disfrutando de nuestros servicios. \n Muchas Gracias.`, 'Ok');
+                        })
+                        .catch((error) => {
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            fncOpenModal(`Seguridad - Validacion de datos`, `Lamentablemente ha habido un error, \n Seguramente tu usuario ya existia, \n Prueba nuevamente o recupera la contraseña. \n Datos del error producido \n \n ${errorMessage} \n \n Muchas Gracias.`, 'Ok');
+                        });
+                    break;
+                case 'Sign-Remember': // Loguin con emial y contraseña
+                    // Remember password y Loguin con email y contraseña
+                    auth.sendPasswordResetEmail(pEmail.value) // email, password
+                        .then((userCredential) => {
+                            // Signed in 
+                            const user = userCredential.user;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            // console.log(user);
+                            // fncOpenModal(`Seguridad - Validacion de datos`, `Revisa tu correo para completar el proceso \n Continua disfrutando de nuestros servicios. \n Muchas Gracias.`, 'Ok');
+                        })
+                        .catch((error) => {
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                            // fncOpenModal(`Seguridad - Validacion de datos`, `Lamentablemente ha habido un error, \n Seguramente tu usuario no existe en nuestra base, \n Prueba nuevamente o recupera la contraseña. \n Datos del error producido \n \n ${errorMessage} \n \n Muchas Gracias.`, 'Ok');
+                        });
+                    break;
+                case 'Sign-in-Google': // Loguin con emial y contraseña
+                    // fncOpenModal('Loguin a atravez de cuenta de google', 'Usa tu propia cuenta de google para realizar el loguin. \n (Requisito previo tener una cuenta existente en nuesto sistema).', 'Ok')
+                    // const provider = new GoogleAuthProvider();
+                    // signInWithPopup(auth, provider)
+                    //     .then((userCredential) => {
+                    //         // Signed in 
+                    //         const user = userCredential.user;
+                    //         // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                    //         // console.log(user);
+                    //         fncOpenModal(`Loguin de usuario`, `Felicidades te has logueado en nuestra comunidad, \n En un momento seras redirigido a la pagina de la aplicacion \n Continua disfrutando de nuestros servicios. \n Muchas Gracias.`, 'Ok');
+                    //     })
+                    //     .catch((error) => {
+                    //         var errorCode = error.code;
+                    //         var errorMessage = error.message;
+                    //         // Aquí puedes redirigir al usuario a la página de destino después del inicio de sesión exitoso
+                    //         fncOpenModal(`Seguridad - Validacion de datos`, `Lamentablemente ha habido un error, \n Seguramente tu usuario o contraseña no son correctos, \n Prueba nuevamente o recupera la contraseña. \n Datos del error producido \n \n ${errorMessage} \n \n Muchas Gracias.`, 'Ok');
+                    //     });
+                    break;
+                default:
+                    alert('No se reconoce la opcion de accion');
+                    break;
+            }
+        }
+        function fncOpenModal(pTitle, pMsg, pBtns) {
+            // Abre el modal de confirmación
+            var myModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+            const vModalTitle = document.getElementById('modalTitle');
+            const vModalMsg = document.getElementById('modalMsg');
+            vModalTitle.innerText = pTitle;
+            vModalMsg.innerText = pMsg;
+
+            const vbtnModalOk = document.getElementById('btnModalOk');
+            const vbtnModalCancel = document.getElementById('btnModalCancel');
+            myModal.show();
+
+            const vIdFootBtnsOk = document.getElementById('id-foot-btns-ok');
+            const vIdFootBtnsCancel = document.getElementById('id-foot-btns-cancel');
+            switch (pBtns) {
+                case 'Ok':
+                    vIdFootBtnsOk.classList.remove('st-none');
+                    vIdFootBtnsCancel.classList.add('st-none');
+                    break;
+                case 'OkCancel':
+                    vIdFootBtnsOk.classList.remove('st-none');
+                    vIdFootBtnsCancel.classList.remove('st-none');
+                    break;
+                default:
+                    return fncOpenModal('Mensaje para el desarrollador', 'El parametro que has elegido para el boton es invalido, \n revisa por fvor', 'Ok')
+            }
+            // myModal.show();
+        }
+        // Eventos de firestone
+        app.auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log('Auth : Sign-In ')
+            } else {
+                console.log('Auth : Sign-Out ')
+            }
+        })
+
+    </script>
+    <script src="../js/log-auth.js"></script>
+
+</body>
+
+</html>
